@@ -24,14 +24,14 @@ private static String formatStats(PlayerStats stats) {
 }
     
 new BukkitRunnable() {
-        @Override
-        public void run() {
-            // TODO Implement ProtocolLib, create a HUD handler for Forge.
-            Bukkit.getOnlinePlayers().forEach( (ply) -> {
-                PlayerStats stats = getPlayerStats( ply );
-                if ( stats != null ) {
-                    ply.sendActionBar( ChatColor.GRAY + formatStats( stats ) );
-                }
-            } );
-        }
-    }.runTaskTimer( this, 0L, 12L );
+    @Override
+    public void run() {
+        // TODO Implement ProtocolLib, create a HUD handler for Forge.
+        Bukkit.getOnlinePlayers().forEach( (ply) -> {
+            PlayerStats stats = getPlayerStats( ply );
+            if ( stats != null ) {
+                ply.sendActionBar( ChatColor.GRAY + formatStats( stats ) );
+            }
+        } );
+    }
+}.runTaskTimer( this, 0L, 12L );
